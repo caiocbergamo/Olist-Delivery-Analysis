@@ -4,7 +4,8 @@ An independent portfolio project by Caio Bergamo, using Excel and Power BI to ex
 
 ## Explore the Project
 
-- [Read the full project write-up (PDF)](Olist-Delivery-Analysis.pdf).
+- [Read the full project write-up online](REPORT.md).
+- [Download the project write-up (PDF)](https://github.com/caiocbergamo/Olist_Delivery_Analysis/raw/refs/heads/main/Olist-Delivery-Analysis.pdf).
 - [Download the complete project package](https://github.com/caiocbergamo/Olist_Delivery_Analysis/releases/download/v1.0/Olist-Delivery-Analysis-Project.zip), including the Excel workbook, Power BI report, editable Word write-up, PDF, and dashboard screenshots.
 - [Data source and attribution](DATA_SOURCE.md).
 
