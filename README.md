@@ -2,6 +2,24 @@
 
 An independent portfolio project by Caio Bergamo, using Excel and Power BI to explore delivery performance and customer reviews.
 
+## Explore the Project
+
+- [Read the full project write-up (PDF)](Olist-Delivery-Analysis.pdf).
+- [Download the complete project package](https://github.com/caiocbergamo/Olist_Delivery_Analysis/releases/download/v1.0/Olist-Delivery-Analysis-Project.zip), including the Excel workbook, Power BI report, editable Word write-up, PDF, and dashboard screenshots.
+- [Data source and attribution](DATA_SOURCE.md).
+
+### Delivery Overview
+
+![Delivery overview for orders purchased in 2017](delivery-overview.png)
+
+### Regional Performance
+
+![Regional delivery performance by customer state](regional-performance.png)
+
+### Customer Reviews
+
+![Customer review scores and low-score shares by delivery classification](customer-reviews.png)
+
 ## Project Objective
 
 I wanted to understand whether late deliveries were associated with lower customer review scores. I also compared order volumes and late-delivery rates across months and customer states to identify patterns worth investigating.
@@ -53,3 +71,22 @@ The findings support investigating delivery capacity during busy months, regiona
 Rates should be considered alongside order volumes. For example, Roraima's 16.67% late rate came from only 3 late deliveries out of 18 evaluated orders.
 
 This analysis describes historical Olist purchases from 2017. It does not represent the entire Brazilian e-commerce market or establish that delivery timing caused review scores.
+
+
+## Open and Refresh the Files
+
+Download and extract the complete project package.
+
+- `excel/Olist Analysis.xlsx`: prepared data, checks, formulas, PivotTables, and Excel analysis.
+- `powerbi/Olist-Delivery-Analysis.pbix`: the four-page interactive report. Open it in Power BI Desktop on Windows.
+- `Olist-Delivery-Analysis.pdf`: the complete project write-up.
+- `Olist-Delivery-Analysis.docx`: the editable write-up.
+- The three PNG files: dashboard previews.
+
+The Power BI report includes imported data, so it can be explored without refreshing first. To refresh on another computer, go to **Transform data > Data source settings**, select the Excel source, and use **Change Source** to choose your extracted `excel/Olist Analysis.xlsx`. Apply the changes and refresh. Both Orders and Customers use this workbook.
+
+The report covers purchases in 2017. Interactive selections change the relevant visuals; the findings labeled **Full Year 2017** remain fixed.
+
+## Attribution and Reuse
+
+The source dataset is provided by Olist on Kaggle under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). The cleaned data and analytical adaptations are shared under the same license. See [data source details](DATA_SOURCE.md) and [license information](LICENSE.md).
