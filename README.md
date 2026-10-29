@@ -1,13 +1,37 @@
 # Olist Delivery Analysis
 
-An independent portfolio project by Caio Bergamo, using Excel and Power BI to explore delivery performance and customer reviews.
+An independent portfolio project by **Caio Bergamo**, using Excel and Power BI to analyze delivery performance and customer reviews.
 
-## Explore the Project
+## Business objective
 
-- [Read the full project write-up online](REPORT.md).
-- [Download the project write-up (PDF)](https://github.com/caiocbergamo/Olist_Delivery_Analysis/raw/refs/heads/main/Olist-Delivery-Analysis.pdf).
-- [Download the complete project package](https://github.com/caiocbergamo/Olist_Delivery_Analysis/releases/download/v1.0/Olist-Delivery-Analysis-Project.zip), including the Excel workbook, Power BI report, editable Word write-up, PDF, and dashboard screenshots.
-- [Data source and attribution](DATA_SOURCE.md).
+Understand whether late deliveries are associated with lower customer review scores, and identify monthly and regional delivery patterns worth investigating.
+
+## Main findings
+
+The analysis covers **orders purchased in 2017**, including those delivered or reviewed in later years.
+
+| Metric | Result |
+| --- | ---: |
+| Total orders | 45,101 |
+| Orders with evaluated delivery timing | 43,426 |
+| Evaluated orders with a review | 43,098 |
+| Delivered by the estimated date | 94.35% |
+| Late-delivery rate | 5.65% |
+| Average review score for late deliveries | 2.32 / 5 |
+
+November had the highest evaluated order volume (7,288) and late-delivery rate (12.40%). São Paulo and Rio de Janeiro together accounted for 51.94% of late deliveries. Among reviewed late deliveries, 61.54% received 1–2 stars. These results support investigating delivery capacity and regional delays, while accounting for order volumes and sample sizes.
+
+## Explore the project
+
+| File | Contents |
+| --- | --- |
+| [Analysis report](REPORT.md) | Findings, recommendations, methodology, and limitations |
+| [Report PDF](Olist-Delivery-Analysis.pdf) | Downloadable project write-up |
+| [Complete project package](https://github.com/caiocbergamo/Olist_Delivery_Analysis/releases/download/v1.0/Olist-Delivery-Analysis-Project.zip) | Excel workbook, Power BI file, Word report, PDF, and dashboard previews |
+| [Source documentation](DATA_SOURCE.md) | Original dataset, preparation, and attribution |
+
+<details>
+<summary>Dashboard previews</summary>
 
 ### Delivery Overview
 
@@ -19,75 +43,39 @@ An independent portfolio project by Caio Bergamo, using Excel and Power BI to ex
 
 ### Customer Reviews
 
-![Customer review scores and low-score shares by delivery classification](customer-reviews.png)
+![Customer review scores by delivery classification](customer-reviews.png)
 
-## Project Objective
+</details>
 
-I wanted to understand whether late deliveries were associated with lower customer review scores. I also compared order volumes and late-delivery rates across months and customer states to identify patterns worth investigating.
+## Tools and approach
 
-## Tools Used
+- **Excel:** clean data, check identifiers and joins, calculate delivery classifications, and summarize findings with PivotTables.
+- **Power Query:** import and prepare the Orders and Customers tables.
+- **Power BI and DAX:** model relationships, calculate measures, and build four interactive report pages.
 
-- Excel: data cleaning, validation, formulas, and PivotTables.
-- Power Query: importing and preparing data for Power BI.
-- Power BI and DAX: data modeling, measures, and interactive reporting.
+## Scope and methodology
 
-## Data and Scope
+Orders are grouped by purchase year. Delivery timing uses calendar dates and requires delivered status plus actual and estimated delivery dates. Orders without sufficient delivery information remain in the total cohort but are excluded from delivery-performance rates.
 
-Source: [Olist Brazilian E-Commerce Public Dataset on Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce), provided by Olist.
+One review is retained per order using the latest review-answer timestamp. Missing scores are excluded from review calculations. Low scores mean 1–2 stars.
 
-The analysis uses orders, customers, and customer reviews. It covers orders purchased in 2017, including those delivered or reviewed in later years.
+## Limitations and interpretation
 
-- 45,101 total orders.
-- 43,426 orders with evaluated delivery timing.
-- 43,098 evaluated orders with a review.
+Results describe historical Olist purchases from 2017 and do not establish that delivery timing caused review scores. Small state samples require caution: Roraima's 16.67% late rate represents 3 of 18 evaluated orders. Product category, seller, distance, and carrier may help explain differences but are not controlled for here.
 
-## Preparation and Methodology
+## Open and refresh
 
-I checked IDs, missing dates, customer matches, and review records in Excel before building the Power BI report.
+1. Download and extract the **complete project package** linked above. GitHub's automatic source-code ZIP contains repository documentation and previews, rather than the full workbook and PBIX.
+2. Open `powerbi/Olist-Delivery-Analysis.pbix` in Power BI Desktop on Windows, or use `excel/Olist Analysis.xlsx` for the prepared data and Excel analysis.
+3. To refresh, go to **Transform data → Data source settings → Change Source** and select your local `excel/Olist Analysis.xlsx`. Both Orders and Customers use this workbook. Apply the changes and refresh.
 
-Deliveries were classified as early, on time, or late by comparing actual and estimated delivery dates, using calendar dates. Orders without sufficient delivery information were excluded from delivery-performance rates.
+The report pages are Delivery Overview, Regional Performance, Customer Reviews, and Sources and Methodology. Interactive selections affect the relevant visuals; findings labeled **Full Year 2017** remain fixed.
 
-One review was retained per order, using the latest review-answer timestamp. Low scores were defined as 1–2 stars, and missing scores were excluded from review calculations.
+## Data source and attribution
 
-## Key Findings
+Source: [Olist Brazilian E-Commerce Public Dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce), provided by Olist under **CC BY-NC-SA 4.0**. Prepared data and analytical adaptations are shared under the same license. See [source details](DATA_SOURCE.md) and [license information](LICENSE.md).
 
-- 94.35% of evaluated orders arrived by the estimated date; 5.65% arrived late.
-- November had the highest evaluated order volume (7,288) and late-delivery rate (12.40%).
-- São Paulo and Rio de Janeiro together accounted for 51.94% of late deliveries.
-- Alagoas had the highest late-delivery rate: 20.71%, based on 41 late deliveries out of 198 evaluated orders.
-- Reviewed late deliveries averaged 2.32 stars, compared with 4.29 for early deliveries and 3.86 for on-time deliveries.
-- Among reviewed late deliveries, 61.54% received 1–2 stars.
+## Other portfolio projects
 
-## Report Pages
-
-1. Delivery Overview
-2. Regional Performance
-3. Customer Reviews
-4. Sources and Methodology
-
-## Recommendations and Limitations
-
-The findings support investigating delivery capacity during busy months, regional delays, and delivery-partner performance.
-
-Rates should be considered alongside order volumes. For example, Roraima's 16.67% late rate came from only 3 late deliveries out of 18 evaluated orders.
-
-This analysis describes historical Olist purchases from 2017. It does not represent the entire Brazilian e-commerce market or establish that delivery timing caused review scores.
-
-
-## Open and Refresh the Files
-
-Download and extract the complete project package.
-
-- `excel/Olist Analysis.xlsx`: prepared data, checks, formulas, PivotTables, and Excel analysis.
-- `powerbi/Olist-Delivery-Analysis.pbix`: the four-page interactive report. Open it in Power BI Desktop on Windows.
-- `Olist-Delivery-Analysis.pdf`: the complete project write-up.
-- `Olist-Delivery-Analysis.docx`: the editable write-up.
-- The three PNG files: dashboard previews.
-
-The Power BI report includes imported data, so it can be explored without refreshing first. To refresh on another computer, go to **Transform data > Data source settings**, select the Excel source, and use **Change Source** to choose your extracted `excel/Olist Analysis.xlsx`. Apply the changes and refresh. Both Orders and Customers use this workbook.
-
-The report covers purchases in 2017. Interactive selections change the relevant visuals; the findings labeled **Full Year 2017** remain fixed.
-
-## Attribution and Reuse
-
-The source dataset is provided by Olist on Kaggle under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). The cleaned data and analytical adaptations are shared under the same license. See [data source details](DATA_SOURCE.md) and [license information](LICENSE.md).
+- [Maven Manufacturing Analysis](https://github.com/caiocbergamo/Maven_Manufacturing_Analysis)
+- [Brick Manufacturing Analysis](https://github.com/caiocbergamo/Brick-Manufacturing-Analysis)

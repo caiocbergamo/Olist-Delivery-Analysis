@@ -1,10 +1,14 @@
 # Olist Delivery Analysis
 
-Caio Bergamo
+*Prepared by Caio Bergamo*
 
-[Download PDF](https://github.com/caiocbergamo/Olist_Delivery_Analysis/raw/refs/heads/main/Olist-Delivery-Analysis.pdf) · [Back to project overview](README.md)
+[Back to project overview](README.md) · [Data source and methodology](DATA_SOURCE.md)
 
-## Project Objective
+## Executive summary
+
+For orders purchased in 2017, 94.35% of evaluated deliveries arrived by the estimated date. November had the highest evaluated volume and late-delivery rate. Reviewed late deliveries averaged 2.32 stars, and 61.54% received 1–2 stars. These patterns support investigating busy-period capacity and regional delays, but they do not establish that delivery timing caused review scores. Order volumes, missing reviews, and small state samples need to be considered alongside the rates.
+
+## Business objective
 
 I wanted to understand whether late deliveries were associated with lower customer review scores. Online reviews act as digital word-of-mouth, and the delivery experience may influence how customers evaluate a purchase. This led me to investigate how average review scores and the share of low ratings (1–2 stars) differed between early, on-time, and late deliveries. I also compared delivery volumes and late-delivery rates across months and customer states to identify seasonal patterns and regional differences in performance.
 
